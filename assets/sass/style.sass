@@ -9,8 +9,76 @@
 
 body
 	display: block
-	font-family: $OpenSans
+	font-family: $Roboto
 	font-size: 14px
+	a
+		text-decoration: none
+		&.cta
+			+padding(14px)
+			background: $primary-color
+			font-weight: 600
+			text-transform: uppercase
+			+border-right-radius(50px)
+			+border-left-radius(50px)
+			color: $white
+	header
+		height: 100px
+		.gridD
+			+display(flex)
+			+align-items(center)
+			+justify-content(space-between)
+		nav
+			ul
+				li
+					display: inline-block
+					+margin(null 15px)
+					a
+						font-size: 18px
+						color: $primary-color
+						font-weight: 600
+						text-decoration: none
+
+	#banner
+		height: 662px
+		background: url('../img/banner.jpg') center center no-repeat
+		.gridD
+			height: 100%
+			+display(flex)
+			+justify-content(center)
+			+align-items(center)
+		.content
+			text-align: center
+		h1
+			font-size: 50px
+			color: $white
+			font-weight: 700
+			text-align: center
+		p
+			font-size: 22px
+			color: $white
+			text-align: center
+			+padding(15px)
+		a
+			font-size: 21px
+			color: $primary-color
+			background: $white
+			display: inline-block
+
+	#solutions
+		+padding(60px null)
+		h2
+			color: $primary-color
+			text-align: center
+			font-size: 60px
+		.solutions
+			+display(flex)
+			+justify-content(space-between)
+			.solution
+				+display(flex)
+				+flex-direction(column)
+				+size(24% 400px)
+				border: 1px solid $primary-color
+				border-radius: 20px
 	.form-group
 		display: block
 		label

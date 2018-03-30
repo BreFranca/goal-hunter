@@ -13,7 +13,9 @@ window.addEventListener('load', ()=> {
     	iptEmail = contactForm.querySelector('[name="email"]'),
     	iptEmp   = contactForm.querySelector('[name="company"]'),
     	iptCargo   = contactForm.querySelector('[name="cargo"]'),
-    	iptFuncionarios   = contactForm.querySelector('[name="n-funcionarios"]');
+    	iptFuncionarios   = contactForm.querySelector('[name="n-funcionarios"]'),
+    	iptResponsavel   = contactForm.querySelector('[name="responsavel"]'),
+    	iptOutrosResponsaveis   = contactForm.querySelector('[name="outros-responsaveis"]');
 
 	Helpers.listen('header nav ul li', 'click', (element)=> {
 		let item = element.getAttribute('menu');
@@ -61,7 +63,9 @@ window.addEventListener('load', ()=> {
 	       	email = iptEmail.value,
 	       	emp   = iptEmp.value,
 	       	cargo = iptCargo.value,
-	       	funcionarios = iptFuncionarios.value;
+	       	funcionarios = iptFuncionarios.value,
+	       	responsavel = iptResponsavel.value,
+	       	outrosResponsaveis = iptOutrosResponsaveis.value;
 
 	    console.log(perfil);
 
@@ -80,7 +84,7 @@ window.addEventListener('load', ()=> {
 	    	return Helpers.formError("E-mail invÃ¡lido. Por favor, verifique.", iptEmail);
 	    }
 
-	    Helpers.saveNews(perfil, name, email, emp, cargo, funcionarios);
+	    Helpers.saveNews(perfil, name, email, emp, cargo, funcionarios, responsavel, outrosResponsaveis);
 
 	    iptName.value = '';
 	    iptEmail.value = '';

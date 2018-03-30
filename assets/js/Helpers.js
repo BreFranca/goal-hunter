@@ -111,27 +111,34 @@ class Helpers {
     return firebase.database().ref().child(reference).push().key;
   }
 
-  static saveNews(perfil, name, email, empresa, cargo, functionarios){
+  static saveNews(perfil, name, email, empresa, cargo, funcionarios, responsavel, outrosResponsaveis){
 
     let updates = {};
-    let b2c = {
-      fullname: name,
-      email: email
-    }
-    let b2b = {
-      fullname: name,
-      email: email,
-      empresa: empresa,
-      cargo: cargo,
-      functionarios: functionarios
+
+    let responsaveis;
+    if(outrosResponsaveis) {
+      responsaveis = outrosResponsaveis
+    } else {
+      responsaveis = responsavel
     }
 
     let lead;
-    if(perfil == 'b2c') {
-      lead = b2c
+    if(perfil == 'b2b') {
+      lead = {
+        fullname: name,
+        email: email,
+        empresa: empresa,
+        cargo: cargo,
+        funcionarios: funcionarios,
+        responsavel: responsaveis
+      }
     } else {
-      lead = b2b
+      lead = {
+        fullname: name,
+        email: email
+      }
     }
+
     updates[`/${perfil}/${this.generateID(perfil)}`] = {
       lead
     };
