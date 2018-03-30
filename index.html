@@ -1,0 +1,124 @@
+  <!DOCTYPE html>
+<html lang="pt-br" dir="goal-hunter">
+  <head>
+    <meta charset="utf-8">
+    <title>Goal Hunter</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  </head>
+  <body>
+
+    <main>
+      <section class="contact">
+        <div class="container">
+          <p>Preencha o formulário para receber novos conteúdos.</p>
+          <form>
+            <div class="form-group">
+              <label for="#">Para começar, em qual perfil você se enquadra?</label>
+              </label>
+              <label for="perfil-b2b">
+                <input type="radio" name="perfil" value="b2b" id="perfil-b2b" required>
+                Sou um profissional de vendas
+              </label>
+              <label for="perfil-b2c">
+                <input type="radio" name="perfil" value="b2c" id="perfil-b2c" required>
+                Empresa que contrata profissional de vendas
+            </div>
+            <div class="form-group">
+              <label for="#">Nome Completo</label>
+              <input type="text" name="fullname" required>
+            </div>
+            <div class="form-group">
+              <label for="#">Email</label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="b2b">
+              <div class="form-group">
+                <label for="#">Empresa</label>
+                <input type="text" name="company">
+              </div>
+              <div class="form-group">
+                <label for="#">Cargo</label>
+                <input type="text" name="cargo">
+              </div>
+              <div class="form-group">
+                <label for="#">Número de funcionarios</label>
+                <input type="number" name="n-funcionarios">
+              </div>
+              <div class="form-group">
+                <label for="#">Na sua empresa, quem é o responsável pela contratação do profissional de vendas?</label>
+                <select name="responsavel">
+                  <option value="#">CEO/ sócios</option>
+                  <option value="#">Gerente de RH</option>
+                  <option value="#">Head de Vendas</option>
+                  <option value="outros">Outros: (espaço para resposta)</option>
+                </select>
+                <input type="text" placeholder="Outros" name="outros-responsaveis">
+              </div>
+              <!-- <div class="form-group">
+                <label for="#">Você já teve problema com análise de competências técnicas de profissionais de vendas em um processo seletivo?</label>
+                <input type="radio" name="problema-analise" value="value-a" required>Sim
+                <br>
+                <input type="radio" name="problema-analise" value="value-b" required>Não
+              </div>
+              <div class="value-a">
+                <div class="form-group">
+                  <label for="#">Conte-nos um pouco sobre essa experiência.</label>
+                  <input type="text" name="experiencia">
+                </div>
+                <div class="form-group">
+                  <label for="#">Como você lidou ou está lidando com isso?</label>
+                  <input type="text" name="lidar">
+                </div>
+                <div class="form-group">
+                  <label for="#">Qual seria a solução ideal para resolver esse problema?</label>
+                  <input type="text" name="solucao-b2b">
+                </div>
+              </div>
+              <div class="value-b">
+                <div class="form-group">
+                  <label for="#">Como você avalia as competências técnicas de profissionais de vendas em um processo seletivo?</label>
+                  <input type="text" name="avaliacao">
+                </div>
+              </div>
+            </div>
+            <div class="b2c">
+              <div class="form-group">
+                <label for="#">Qual sua especialização em vendas?</label>
+                <select name="especializacao" required>
+                  <option value="#">Account Executive</option>
+                  <option value="#">SDR Inboound</option>
+                  <option value="#">SDR Outbound</option>
+                  <option value="#">Faço todo o processo de vendas - da prospecção ao fechamento</option>
+                </select>
+              </div> -->
+              <!-- <div class="form-group">
+                <label for="#">Você já teve problema com análise de competências técnicas em um processo seletivo?</label>
+                <input type="radio" name="problema-analise" value="value-experiencia-a" required>Sim
+                <br>
+                <input type="radio" name="problema-analise" value="value-experiencia-a" required>Não
+              </div>
+              <div class="values">
+                <div class="form-group">
+                  <label for="#">Conte-nos um pouco sobre essa experiência.</label>
+                  <input type="text" name="avaliacao" required>
+                </div>
+                <div class="form-group value-a">
+                  <label for="#">Qual seria a solução ideal para resolver esse problema? (RA – obrigatória)</label>
+                  <input type="text" name="solucao-b2c">
+                </div>
+              </div> -->
+            </div>
+            <input type="submit" value="Cadastrar">
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script type="text/javascript" src="assets/js/helpers.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+    <script type="text/javascript" src="assets/js/scripts.js"></script>
+</body>
+</html>

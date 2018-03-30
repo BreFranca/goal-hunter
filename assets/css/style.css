@@ -1,0 +1,116 @@
+/* Project Name: Goal Hunter
+ * Project Url: http://goalhunter.com.br
+ * Author: Breno Franca
+ * Author URI: http://brefranca.com.br
+ * Description: Landing Page Goal Hunter - Gama Academy
+ * Version: 1.0.0 */	 */
+.slicknav_btn {
+  display: block;
+  height: 100%; }
+
+.slicknav_icon {
+  width: 48px;
+  height: 36px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  float: right; }
+  .slicknav_icon .slicknav_icon-bar {
+    background-color: #000;
+    position: absolute;
+    left: 10%;
+    height: 4px;
+    width: 80%; }
+  .slicknav_icon .slicknav_icon-bar:first-child {
+    top: 4px;
+    -webkit-transition: all, 0.3s, ease-in-out;
+    -moz-transition: all, 0.3s, ease-in-out;
+    transition: all, 0.3s, ease-in-out;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  .slicknav_icon .slicknav_icon-bar:nth-child(2) {
+    top: 50%;
+    margin-top: -3px;
+    display: block; }
+  .slicknav_icon .slicknav_icon-bar:last-child {
+    bottom: 6px;
+    -webkit-transition: all, 0.3s, ease-in-out;
+    -moz-transition: all, 0.3s, ease-in-out;
+    transition: all, 0.3s, ease-in-out;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+.slicknav_open .slicknav_icon-bar:first-child {
+  top: 16px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.slicknav_open .slicknav_icon-bar:nth-child(2) {
+  display: none; }
+
+.slicknav_open .slicknav_icon-bar:last-child {
+  bottom: 17px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+/* HELP
+ */
+/* FONTS
+ */
+@font-face {
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff"), url("../fonts/OpenSans-Light.ttf") format("truetype"), url("../fonts/OpenSans-Light.svg#OpenSans") format("svg"); }
+/* COLORS
+ */
+/* EXTENDS CLASSES
+ */
+.gridE, .gridD {
+  margin-left: auto;
+  margin-right: auto; }
+
+.clearfix {
+  clear: both; }
+
+/* RESPONSIVE GRID
+ */
+.gridE {
+  max-width: 1562px; }
+
+.gridD {
+  max-width: 1165px; }
+  @media (max-width: 1150px) {
+    .gridD {
+      padding-right: 15px;
+      padding-left: 15px; } }
+
+body {
+  display: block;
+  font-family: "OpenSans", Arial, Sans-serif;
+  font-size: 14px; }
+  body .form-group {
+    display: block; }
+    body .form-group label {
+      display: block;
+      text-transform: uppercase; }
+    body .form-group input[type="text"],
+    body .form-group input[type="number"],
+    body .form-group input[type="email"],
+    body .form-group select {
+      display: block; }
+
+/*# sourceMappingURL=style.css.map */
