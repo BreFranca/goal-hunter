@@ -129,7 +129,9 @@ window.addEventListener('load', ()=> {
 		iptExperienciasB2C.value = '',
 		iptSolucaoB2C.value = '';
 
-    	return Helpers.formMsg("Obrigado por se cadastrar na nossa base.", contactForm);
+		// contacForm.querySelector('form').reset();
+
+    	return Helpers.formMsg("Foi muito valiosa a sua colaboração, o time da Goal Hunter agradece!.", contactForm);
 
   });
 
