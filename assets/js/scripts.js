@@ -115,10 +115,21 @@ window.addEventListener('load', ()=> {
 	    }
 
 	    Helpers.saveLead(ip, perfil, horario, name, email, emp, cargo, funcionarios, responsavel, outrosResponsaveis, experienciasB2B, comoLidar, solucaoB2B, avaliacaoCompetencias, especializacao, experienciasB2C, solucaoB2C);
-
-	    iptName.value = '';
-	    iptEmail.value = '';
-	    iptEmp.value = '';
+		
+		iptName.value = '',
+		iptEmail.value = '',
+		iptEmp.value = '',
+		iptCargo.value = '',
+		iptFuncionarios.value = '',
+		iptResponsavel.value = '',
+		iptOutrosResponsaveis.value = '',
+		iptExperienciaB2B.value = '',
+		iptComoLidar.value = '',
+		iptSolucaoB2B.value = '',
+		iptAvaliacaoCompetencias.value = '',
+		iptEspecializacao.value = '',
+		iptExperienciasB2C.value = '',
+		iptSolucaoB2C.value = '';
 
     	return Helpers.formMsg("Obrigado por se cadastrar na nossa base.", contactForm);
 
