@@ -61,8 +61,6 @@ window.addEventListener('load', ()=> {
 		Helpers.formErrorClear(iptName);
 		if(Helpers.empty(name)){
 	    	return Helpers.formError("Preencha seu nome por favor.", iptName);
-		} else if(!Helpers.isCorrectName(name)){
-	    	return Helpers.formError("Nome inválido. Por favor, verifique.", iptName);
 		}
 	});
 
@@ -106,9 +104,9 @@ window.addEventListener('load', ()=> {
 	    	return Helpers.formError("Campos em branco. Por favor, verifique.");
 	    }
 
-	    if(!Helpers.isCorrectName(name)){
-	    	return Helpers.formError("Nome inválido. Por favor, verifique.", iptName);
-	    }
+	    // if(!Helpers.isCorrectName(name)){
+	    // 	return Helpers.formError("Nome inválido. Por favor, verifique.", iptName);
+	    // }
 
 	    if(!Helpers.isEmail(email)){
 	    	return Helpers.formError("E-mail inválido. Por favor, verifique.", iptEmail);
@@ -129,7 +127,32 @@ window.addEventListener('load', ()=> {
 		iptExperienciasB2C.value = '',
 		iptSolucaoB2C.value = '';
 
-		// contacForm.querySelector('form').reset();
+		var perf = document.getElementsByName("perfil");
+		var problemaAnalise = document.getElementsByName("problema-analise");
+		var analiseCompetencias = document.getElementsByName("analise-competencias");
+		for(var i=0;i<perf.length;i++) {
+			perf[i].checked = false;
+		}
+		for(var i=0;i<problemaAnalise.length;i++) {
+			problemaAnalise[i].checked = false;
+		}
+		for(var i=0;i<analiseCompetencias.length;i++) {
+			analiseCompetencias[i].checked = false;
+		}
+
+		var campoB2C = contactForm.querySelector('.b2c'),
+			campoB2B = contactForm.querySelector('.b2b'),
+			campoOutros = contactForm.querySelector('.outros'),
+			campoValueA = contactForm.querySelector('.value-analise-a'),
+			campoValueB = contactForm.querySelector('.value-analise-b'),
+			campoCompA = contactForm.querySelector('.value-competencias-b');
+
+		campoB2C.classList.add('none');
+		campoB2B.classList.add('none');
+		campoOutros.classList.add('none');
+		campoValueA.classList.add('none');
+		campoValueB.classList.add('none');
+		campoCompA.classList.add('none');
 
     	return Helpers.formMsg("Foi muito valiosa a sua colaboração, o time da Goal Hunter agradece!.", contactForm);
 

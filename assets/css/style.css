@@ -315,6 +315,7 @@ body {
       body .form-group select:-ms-input-placeholder {
         font-weight: 600; }
     body .form-group input[type="submit"] {
+      cursor: pointer;
       -webkit-appearance: none;
       -moz-appearance: none;
       -ms-appearance: none;
