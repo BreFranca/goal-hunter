@@ -6,7 +6,7 @@ window.addEventListener('load', ()=> {
 
 	window.addEventListener('resize', ()=> window.isMobile = window.innerWidth <= 475);
 
-	let contactForm = $('.contact form')
+	let contactForm = $('#contact form')
 		body     = $('body'),
 		iptPerfil  = contactForm.querySelector('[name="perfil"]'),
 		iptName  = contactForm.querySelector('[name="fullname"]'),
@@ -15,7 +15,14 @@ window.addEventListener('load', ()=> {
     	iptCargo   = contactForm.querySelector('[name="cargo"]'),
     	iptFuncionarios   = contactForm.querySelector('[name="n-funcionarios"]'),
     	iptResponsavel   = contactForm.querySelector('[name="responsavel"]'),
-    	iptOutrosResponsaveis   = contactForm.querySelector('[name="outros-responsaveis"]');
+    	iptOutrosResponsaveis   = contactForm.querySelector('[name="outros-responsaveis"]'),
+    	iptExperienciaB2B   = contactForm.querySelector('[name="experiencia-b2b"]'),
+    	iptComoLidar   = contactForm.querySelector('[name="lidar"]'),
+    	iptSolucaoB2B   = contactForm.querySelector('[name="solucao-b2b"]'),
+    	iptAvaliacaoCompetencias   = contactForm.querySelector('[name="avaliacao-competencias"]'),
+    	iptEspecializacao   = contactForm.querySelector('[name="especializacao"]'),
+    	iptExperienciasB2C   = contactForm.querySelector('[name="experiencia-b2c"]'),
+    	iptSolucaoB2C   = contactForm.querySelector('[name="solucao-b2c"]');
 
 	Helpers.listen('header nav ul li', 'click', (element)=> {
 		let item = element.getAttribute('menu');
@@ -65,7 +72,14 @@ window.addEventListener('load', ()=> {
 	       	cargo = iptCargo.value,
 	       	funcionarios = iptFuncionarios.value,
 	       	responsavel = iptResponsavel.value,
-	       	outrosResponsaveis = iptOutrosResponsaveis.value;
+	       	outrosResponsaveis = iptOutrosResponsaveis.value,
+	       	experienciasB2B = iptExperienciaB2B.value,
+	       	comoLidar = iptComoLidar.value,
+	       	solucaoB2B = iptSolucaoB2B.value,
+	       	avaliacaoCompetencias = iptAvaliacaoCompetencias.value,
+	       	especializacao = iptEspecializacao.value,
+	       	experienciasB2C = iptExperienciasB2C.value,
+	       	solucaoB2C = iptSolucaoB2C.value;
 
 	    console.log(perfil);
 
@@ -84,7 +98,7 @@ window.addEventListener('load', ()=> {
 	    	return Helpers.formError("E-mail invÃ¡lido. Por favor, verifique.", iptEmail);
 	    }
 
-	    Helpers.saveNews(perfil, name, email, emp, cargo, funcionarios, responsavel, outrosResponsaveis);
+	    Helpers.saveNews(perfil, name, email, emp, cargo, funcionarios, responsavel, outrosResponsaveis, experienciasB2B, comoLidar, solucaoB2B, avaliacaoCompetencias, especializacao, experienciasB2C, solucaoB2C);
 
 	    iptName.value = '';
 	    iptEmail.value = '';

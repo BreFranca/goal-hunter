@@ -111,7 +111,7 @@ class Helpers {
     return firebase.database().ref().child(reference).push().key;
   }
 
-  static saveNews(perfil, name, email, empresa, cargo, funcionarios, responsavel, outrosResponsaveis){
+  static saveNews(perfil, name, email, empresa, cargo, funcionarios, responsavel, outrosResponsaveis, experienciasB2B, comoLidar, solucaoB2B, avaliacaoCompetencias, especializacao, experienciasB2C, solucaoB2C){
 
     let updates = {};
 
@@ -130,12 +130,19 @@ class Helpers {
         empresa: empresa,
         cargo: cargo,
         funcionarios: funcionarios,
-        responsavel: responsaveis
+        responsavel: responsaveis,
+        experienciasB2B: experienciasB2B,
+        comoLidar: comoLidar,
+        solucaoB2B: solucaoB2B,
+        avaliacaoCompetencias: avaliacaoCompetencias
       }
     } else {
       lead = {
         fullname: name,
-        email: email
+        email: email,
+        especializacao: especializacao,
+        experienciasB2C: experienciasB2C,
+        solucaoB2C: solucaoB2C
       }
     }
 
