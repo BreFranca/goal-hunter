@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script>
+    function myIP() {
+        if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+        else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
+        xmlhttp.send();
+        hostipInfo = xmlhttp.responseText.split("\n");
+        for (i=0; hostipInfo.length >= i; i++) {
+            ipAddress = hostipInfo[i].split(":");
+            if ( ipAddress[0] == "IP" ) return ipAddress[1];
+        }
+        return false;
+    }
+    </script>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
   </head>
   <body>
@@ -49,6 +63,7 @@
             <div class="column">
               <form>
                 <div class="form-group">
+                  <input type="hidden" name="ip-server" value="" id="ip-server" />
                   <label for="#">Para começar, em qual perfil você se enquadra?</label>
                   <label for="perfil-b2b">
                     <input type="radio" name="perfil" value="b2b" id="perfil-b2b" required onclick="getPerfil(this.value)">
@@ -61,24 +76,24 @@
                   <input type="hidden" id="perfil">
                 </div>
                 <div class="form-group">
-                  <input type="text" name="fullname" placeholder="Nome Completo" required>
+                  <input type="text" name="fullname" placeholder="Nome Completo*" required>
                 </div>
                 <div class="form-group">
-                  <input type="email" name="email" placeholder="Email" required>
+                  <input type="email" name="email" placeholder="Email*" required>
                 </div>
                 <div class="form-group b2b none">
                   <div class="form-group">
-                    <input type="text" name="company" placeholder="Empresa">
+                    <input type="text" name="company" placeholder="Empresa*">
                   </div>
                   <div class="form-group">
-                    <input type="text" name="cargo" placeholder="Cargo">
+                    <input type="text" name="cargo" placeholder="Cargo*">
                   </div>
                   <div class="form-group">
-                    <input type="number" name="n-funcionarios" placeholder="Número de funcionarios">
+                    <input type="number" name="n-funcionarios" placeholder="Número de funcionarios*">
                   </div>
                   <div class="form-group">
                     <div class="form-group">
-                      <label for="#">Na sua empresa, quem é o responsável pela contratação do profissional de vendas?</label>
+                      <label for="#">Na sua empresa, quem é o responsável pela contratação do profissional de vendas?*</label>
                       <select name="responsavel" onchange="others(this);">
                         <option value="CEO/ sócios">CEO/ sócios</option>
                         <option value="Gerente de RH">Gerente de RH</option>
@@ -87,11 +102,11 @@
                       </select>
                     </div>
                     <div id="outros" class="form-group outros none">
-                      <input type="text" placeholder="Outros" name="outros-responsaveis">
+                      <input type="text" placeholder="Especifique" name="outros-responsaveis">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="#">Você já teve problema com análise de competências técnicas de profissionais de vendas em um processo seletivo?</label>
+                    <label for="#">Você já teve problema com análise de competências técnicas de profissionais de vendas em um processo seletivo?*</label>
                     <label for="value-analise-a">
                       <input type="radio" name="problema-analise" value="value-analise-a" id="value-analise-a">Sim
                     </label>
@@ -144,7 +159,7 @@
                       <label for="#">Conte-nos um pouco sobre essa experiência.</label>
                       <input type="text" name="experiencia-b2c">
                     </div>
-                    <div class="form-group value-competencias-a none">
+                    <div class="form-group value-competencias-b none">
                       <label for="#">Qual seria a solução ideal para resolver esse problema?</label>
                       <input type="text" name="solucao-b2c">
                     </div>
@@ -165,8 +180,8 @@
               <h2>Mantenha o foco. Sempre!</h2>
               <h3>Identifique as Melhores Oportunidades</h3>
               <p>De acordo com pesquisas recentes divulgadas pelo IBOPE, apenas 3 em cada 10 brasileiros permanecem em seus empregos por mais de 2 anos. Com mais de 2 mil pessoas entrevistadas, o levantamento apontou que, para mais de 70% dos respondentes, essa rotatividade prejudica as empresas, o mercado e os trabalhadores.
-              Parte disso se deve, sim, a erros no momento da avaliação dos candidatos, muitas vezes selecionados sem a consideração de fatores importantes e determinantes de seus perfis. Enquanto as empresas perdem por precisarem reavaliar suas equipes, os candidatos perdem por continuarem em meio a incertezas e esperas.
-              Por isso é importante, desde o primeiro contato, identificar o foco que deve ser aplicado sobre as habilidades e a personalidade dos candidatos, para que os processos sejam mais justos e adequados às exigências de cada vaga aberta no mercado.</p>
+              <br>Parte disso se deve, sim, a erros no momento da avaliação dos candidatos, muitas vezes selecionados sem a consideração de fatores importantes e determinantes de seus perfis. Enquanto as empresas perdem por precisarem reavaliar suas equipes, os candidatos perdem por continuarem em meio a incertezas e esperas.
+              <br>Por isso é importante, desde o primeiro contato, identificar o foco que deve ser aplicado sobre as habilidades e a personalidade dos candidatos, para que os processos sejam mais justos e adequados às exigências de cada vaga aberta no mercado.</p>
             </div>
             <div class="column image">
               <img src="assets/img/bg-foco.png" alt="">
@@ -182,7 +197,7 @@
       </div>
     </footer>
 
-    <script type="text/javascript" src="assets/js/Helpers.js"></script>
+    <script type="text/javascript" src="assets/js/helpers.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
     <script type="text/javascript" src="assets/js/scripts.js"></script>
