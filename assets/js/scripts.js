@@ -1,5 +1,20 @@
 
 let $ = document.querySelector.bind(document);
+function getPerfil(browser) {
+	iptPerfil = browser;
+}
+
+let data = new Date();
+
+let dia  = data.getDate(),
+	mes  = data.getMonth() + 1,
+	ano  = data.getFullYear(),
+	hora = data.getHours(),
+	min  = data.getMinutes(),
+	seg  = data.getSeconds()
+
+let atual = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + min + ':' + seg
+
 window.addEventListener('load', ()=> {
 
 	window.isMobile = window.innerWidth <= 475;
@@ -8,7 +23,6 @@ window.addEventListener('load', ()=> {
 
 	let contactForm = $('#contact form')
 		body     = $('body'),
-		iptPerfil  = contactForm.querySelector('[name="perfil"]'),
 		iptName  = contactForm.querySelector('[name="fullname"]'),
     	iptEmail = contactForm.querySelector('[name="email"]'),
     	iptEmp   = contactForm.querySelector('[name="company"]'),
@@ -46,7 +60,7 @@ window.addEventListener('load', ()=> {
 		if(Helpers.empty(name)){
 	    	return Helpers.formError("Preencha seu nome por favor.", iptName);
 		} else if(!Helpers.isCorrectName(name)){
-	    	return Helpers.formError("Nome invÃ¡lido. Por favor, verifique.", iptName);
+	    	return Helpers.formError("Nome inválido. Por favor, verifique.", iptName);
 		}
     });
 
@@ -56,7 +70,7 @@ window.addEventListener('load', ()=> {
 		if(Helpers.empty(email)){
 	    	return Helpers.formError("Preencha seu e-mail por favor.", iptEmail);
 		} else if(!Helpers.isEmail(email)){
-	    	return Helpers.formError("E-mail invÃ¡lido. Por favor, verifique.", iptEmail);
+	    	return Helpers.formError("E-mail inválido. Por favor, verifique.", iptEmail);
 		}
     });
 
@@ -65,8 +79,9 @@ window.addEventListener('load', ()=> {
 	    event.preventDefault();
 	    event.stopPropagation();
 
-	    let perfil = iptPerfil.value;
-	    	name  = iptName.value,
+	    let perfil = iptPerfil,
+	    	horario   = atual;
+	    let name  = iptName.value,
 	       	email = iptEmail.value,
 	       	emp   = iptEmp.value,
 	       	cargo = iptCargo.value,
@@ -81,8 +96,6 @@ window.addEventListener('load', ()=> {
 	       	experienciasB2C = iptExperienciasB2C.value,
 	       	solucaoB2C = iptSolucaoB2C.value;
 
-	    console.log(perfil);
-
 	    Helpers.formErrorClear(iptName);
 	    Helpers.formErrorClear(iptEmail);
 
@@ -91,14 +104,14 @@ window.addEventListener('load', ()=> {
 	    }
 
 	    if(!Helpers.isCorrectName(name)){
-	    	return Helpers.formError("Nome invÃ¡lido. Por favor, verifique.", iptName);
+	    	return Helpers.formError("Nome inválido. Por favor, verifique.", iptName);
 	    }
 
 	    if(!Helpers.isEmail(email)){
-	    	return Helpers.formError("E-mail invÃ¡lido. Por favor, verifique.", iptEmail);
+	    	return Helpers.formError("E-mail inválido. Por favor, verifique.", iptEmail);
 	    }
 
-	    Helpers.saveNews(perfil, name, email, emp, cargo, funcionarios, responsavel, outrosResponsaveis, experienciasB2B, comoLidar, solucaoB2B, avaliacaoCompetencias, especializacao, experienciasB2C, solucaoB2C);
+	    Helpers.saveNews(perfil, horario, name, email, emp, cargo, funcionarios, responsavel, outrosResponsaveis, experienciasB2B, comoLidar, solucaoB2B, avaliacaoCompetencias, especializacao, experienciasB2C, solucaoB2C);
 
 	    iptName.value = '';
 	    iptEmail.value = '';

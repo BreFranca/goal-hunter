@@ -48,14 +48,25 @@
             </div>
             <div class="column">
               <form>
-                <input type="hidden" name="perfil" value="b2c">
+                <div class="form-group">
+                  <label for="#">Para começar, em qual perfil você se enquadra?</label>
+                  <label for="perfil-b2b">
+                    <input type="radio" name="perfil" value="b2b" id="perfil-b2b" required onclick="getPerfil(this.value)">
+                    Empresa que contrata profissional de vendas
+                  </label>
+                  <label for="perfil-b2c">
+                    <input type="radio" name="perfil" value="b2c" id="perfil-b2c" required onclick="getPerfil(this.value)">
+                    Sou um profissional de vendas
+                  </label>
+                  <input type="hidden" id="perfil">
+                </div>
                 <div class="form-group">
                   <input type="text" name="fullname" placeholder="Nome Completo" required>
                 </div>
                 <div class="form-group">
                   <input type="email" name="email" placeholder="Email" required>
                 </div>
-                <div class="form-group b2b">
+                <div class="form-group b2b none">
                   <div class="form-group">
                     <input type="text" name="company" placeholder="Empresa">
                   </div>
@@ -68,24 +79,24 @@
                   <div class="form-group">
                     <div class="form-group">
                       <label for="#">Na sua empresa, quem é o responsável pela contratação do profissional de vendas?</label>
-                      <select name="responsavel">
-                        <option value="#">CEO/ sócios</option>
-                        <option value="#">Gerente de RH</option>
-                        <option value="#">Head de Vendas</option>
-                        <option value="outros">Outros: (espaço para resposta)</option>
+                      <select name="responsavel" onchange="others(this);">
+                        <option value="CEO/ sócios">CEO/ sócios</option>
+                        <option value="Gerente de RH">Gerente de RH</option>
+                        <option value="Head de Vendas">Head de Vendas</option>
+                        <option value="outros">Outros</option>
                       </select>
                     </div>
-                    <div class="form-group outros">
+                    <div id="outros" class="form-group outros none">
                       <input type="text" placeholder="Outros" name="outros-responsaveis">
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="#">Você já teve problema com análise de competências técnicas de profissionais de vendas em um processo seletivo?</label>
-                    <input type="radio" name="problema-analise" class="problema-analise" value="value-a" required>Sim
+                    <input type="radio" name="problema-analise" value="value-analise-a">Sim
                     <br>
-                    <input type="radio" name="problema-analise" value="value-b" required>Não
+                    <input type="radio" name="problema-analise" value="value-analise-b">Não
                   </div>
-                  <div class="value-a none">
+                  <div class="value-analise-a none">
                     <div class="form-group">
                       <label for="#">Conte-nos um pouco sobre essa experiência.</label>
                       <input type="text" name="experiencia-b2b">
@@ -99,7 +110,7 @@
                       <input type="text" name="solucao-b2b">
                     </div>
                   </div>
-                  <div class="value-b none">
+                  <div class="value-analise-b none">
                     <div class="form-group">
                       <label for="#">Como você avalia as competências técnicas de profissionais de vendas em um processo seletivo?</label>
                       <input type="text" name="avaliacao-competencias">
@@ -109,25 +120,25 @@
                 <div class="form-group b2c none">
                   <div class="form-group">
                     <label for="#">Qual sua especialização em vendas?</label>
-                    <select name="especializacao" required>
-                      <option value="#">Account Executive</option>
-                      <option value="#">SDR Inboound</option>
-                      <option value="#">SDR Outbound</option>
-                      <option value="#">Faço todo o processo de vendas - da prospecção ao fechamento</option>
+                    <select name="especializacao">
+                      <option value="Account Executive">Account Executive</option>
+                      <option value="SDR Inboound">SDR Inboound</option>
+                      <option value="SDR Outbound">SDR Outbound</option>
+                      <option value="Faço todo o processo de vendas - da prospecção ao fechamento">Faço todo o processo de vendas - da prospecção ao fechamento</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="#">Você já teve problema com análise de competências técnicas em um processo seletivo?</label>
-                    <input type="radio" name="problema-analise" value="value-experiencia-a" required>Sim
+                    <input type="radio" name="analise-competencias" value="value-competencias-a">Sim
                     <br>
-                    <input type="radio" name="problema-analise" value="value-experiencia-a" required>Não
+                    <input type="radio" name="analise-competencias" value="value-competencias-b">Não
                   </div>
                   <div class="values">
                     <div class="form-group">
                       <label for="#">Conte-nos um pouco sobre essa experiência.</label>
-                      <input type="text" name="experiencia-b2c" required>
+                      <input type="text" name="experiencia-b2c">
                     </div>
-                    <div class="form-group value-a none">
+                    <div class="form-group value-competencias-a none">
                       <label for="#">Qual seria a solução ideal para resolver esse problema?</label>
                       <input type="text" name="solucao-b2c">
                     </div>
