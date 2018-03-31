@@ -121,13 +121,11 @@ window.addEventListener('load', ()=> {
 		iptEmp.value = '',
 		iptCargo.value = '',
 		iptFuncionarios.value = '',
-		iptResponsavel.value = '',
 		iptOutrosResponsaveis.value = '',
 		iptExperienciaB2B.value = '',
 		iptComoLidar.value = '',
 		iptSolucaoB2B.value = '',
 		iptAvaliacaoCompetencias.value = '',
-		iptEspecializacao.value = '',
 		iptExperienciasB2C.value = '',
 		iptSolucaoB2C.value = '';
 
