@@ -270,10 +270,10 @@ body {
       padding-top: 0; }
     body .form-group label {
       display: block;
-      text-transform: uppercase;
       max-width: 470px;
       font-family: "Quicksand", sans-serif;
-      font-weight: 600; }
+      font-weight: 600;
+      color: #636363; }
     body .form-group input[type="text"],
     body .form-group input[type="number"],
     body .form-group input[type="email"],
@@ -353,6 +353,9 @@ body {
         font-weight: 700;
         padding-top: 15px;
         padding-bottom: 15px; }
+@media(max-width: 992px) {
+  body #contact .columns .column p {
+    text-align: justify; } }
         body #contact .columns .column p:first-child {
           padding-top: 0; }
         body #contact .columns .column p strong {
@@ -364,6 +367,11 @@ body {
         margin-right: auto;
         margin-left: auto;
         margin-top: 30px; }
+@media(max-width: 992px) {
+  body #contact .columns .column img {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    max-width: 100px; } }
     body #contact .form-msg {
       margin-top: 20px;
       font-size: 16px;
