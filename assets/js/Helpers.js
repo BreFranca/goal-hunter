@@ -111,7 +111,7 @@ class Helpers {
     return firebase.database().ref().child(reference).push().key;
   }
 
-  static saveNews(perfil, horario, name, email, empresa, cargo, funcionarios, responsavel, outrosResponsaveis, experienciasB2B, comoLidar, solucaoB2B, avaliacaoCompetencias, especializacao, experienciasB2C, solucaoB2C){
+  static saveLead(ip, perfil, horario, name, email, empresa, cargo, funcionarios, responsavel, outrosResponsaveis, experienciasB2B, comoLidar, solucaoB2B, avaliacaoCompetencias, especializacao, experienciasB2C, solucaoB2C){
 
     let updates = {};
 
@@ -125,6 +125,7 @@ class Helpers {
     let lead;
     if(perfil == 'b2b') {
       lead = {
+        ip: ip,
         perfil: perfil,
         horario: horario,
         fullname: name,
@@ -140,6 +141,7 @@ class Helpers {
       }
     } else {
       lead = {
+        ip: ip,
         perfil: perfil,
         horario: horario,
         fullname: name,

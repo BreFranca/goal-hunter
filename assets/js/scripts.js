@@ -13,7 +13,8 @@ let dia  = data.getDate(),
 	min  = data.getMinutes(),
 	seg  = data.getSeconds()
 
-let atual = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + min + ':' + seg
+let atual = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + min + ':' + seg;
+
 
 window.addEventListener('load', ()=> {
 
@@ -23,6 +24,7 @@ window.addEventListener('load', ()=> {
 
 	let contactForm = $('#contact form')
 		body     = $('body'),
+		iptIp  = contactForm.querySelector('[name="ip-server"]'),
 		iptName  = contactForm.querySelector('[name="fullname"]'),
     	iptEmail = contactForm.querySelector('[name="email"]'),
     	iptEmp   = contactForm.querySelector('[name="company"]'),
@@ -62,7 +64,7 @@ window.addEventListener('load', ()=> {
 		} else if(!Helpers.isCorrectName(name)){
 	    	return Helpers.formError("Nome inválido. Por favor, verifique.", iptName);
 		}
-    });
+	});
 
 	iptEmail.addEventListener('keyup', (event) => {
 		let email = iptEmail.value;
@@ -81,7 +83,8 @@ window.addEventListener('load', ()=> {
 
 	    let perfil = iptPerfil,
 	    	horario   = atual;
-	    let name  = iptName.value,
+		let	ip = iptIp.value,
+			name  = iptName.value,
 	       	email = iptEmail.value,
 	       	emp   = iptEmp.value,
 	       	cargo = iptCargo.value,
@@ -111,7 +114,7 @@ window.addEventListener('load', ()=> {
 	    	return Helpers.formError("E-mail inválido. Por favor, verifique.", iptEmail);
 	    }
 
-	    Helpers.saveNews(perfil, horario, name, email, emp, cargo, funcionarios, responsavel, outrosResponsaveis, experienciasB2B, comoLidar, solucaoB2B, avaliacaoCompetencias, especializacao, experienciasB2C, solucaoB2C);
+	    Helpers.saveLead(ip, perfil, horario, name, email, emp, cargo, funcionarios, responsavel, outrosResponsaveis, experienciasB2B, comoLidar, solucaoB2B, avaliacaoCompetencias, especializacao, experienciasB2C, solucaoB2C);
 
 	    iptName.value = '';
 	    iptEmail.value = '';
