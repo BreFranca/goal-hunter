@@ -1,7 +1,7 @@
-ip = myIP();
-input = document.getElementById('ip-server');
-input.setAttribute('value', ip);
-
+function getIP(json) {
+	input = document.getElementById('ip-server');
+	input.setAttribute('value', json.ip);
+}
 // let $ = document.querySelector.bind(document);
 let contactForm = $('#contact form')
 
@@ -111,4 +111,12 @@ Helpers.listen('[name="analise-competencias"]', 'click', (element)=> {
 		// REQUIRED
 		solucaoB2C.setAttribute('required', '');
 	}
+});
+
+Helpers.listen('#modal .mask', 'click', (element)=> {
+	return Helpers.fecharModal();
+});
+
+Helpers.listen('#modal .fechar', 'click', (element)=> {
+	return Helpers.fecharModal();
 });

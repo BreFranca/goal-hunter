@@ -1,3 +1,4 @@
+modal = document.getElementById('modal');
 class Helpers {
 
   constructor(){
@@ -161,10 +162,14 @@ class Helpers {
   }
 
   static formMsg(msg, form){
-    this.addClass(form, 'thank-you');
+    // this.addClass(form, 'thank-you');
+    modal.classList.add('show');
     form.msg = this.createElement('div', {innerHTML : msg, className: 'form-msg'});
-    form.appendChild(form.msg);
-    form.focus();
+    // form.appendChild(form.msg);
+    // form.focus();
   }
 
+  static fecharModal(){
+    modal.classList.remove('show');
+  }
 }

@@ -264,3 +264,46 @@ body
 		img
 			max-height: 60px
 			width: auto
+	
+	#modal
+		+position(fixed, 0)
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
+		z-index: 10
+		opacity: 0
+		visibility: hidden
+		@extend %transition
+		&.show
+			opacity: 1
+			visibility: visible
+		.mask
+			+position(fixed, 0)
+			+size(100%)
+			background: rgba($black, .5)
+		.content
+			position: relative
+			border-radius: 10px
+			+size(300px auto)
+			+padding(20px 15px)
+			background: $white
+			+display(flex)
+			+justify-content(center)
+			+align-items(center)
+			+flex-direction(column)
+			text-align: center
+			font-family: $quickSand
+			font-weight: 600
+			font-size: 18px
+			@media(max-width: 480px)
+				width: 80%
+			img
+				margin-bottom: 15px
+				@media(max-width: 480px)
+					max-height: 60px
+			.fechar
+				+position(absolute, 5px 7px null null)
+				font-family: $quickSand
+				font-weight: bold
+				cursor: pointer
+		
