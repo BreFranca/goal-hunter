@@ -1,0 +1,87 @@
+@import "components/bourbon/bourbon"
+@import "components/grid-responsive"
+@import "components/hamburger-icon"
+
+/*
+ * HELP
+ */
+// @include item or +item
+// @extend %class or .class
+// $variable = items
+
+/*
+ * FONTS
+ */
+// +font-face("OpenSans", "../fonts/OpenSans-Light")
+
+$Roboto: 'Roboto', sans-serif
+$quickSand: 'Quicksand', sans-serif
+$nunito: 'Nunito', sans-serif
+
+/*
+ * COLORS
+ */
+$white: #ffffff
+$black: #061921
+$grey: #636362
+$primary-color: #85e0c2
+$secondary-color: #0099ff
+
+$urlImg: 'assets/img/'
+/*
+ * EXTENDS CLASSES
+ */
+
+*
+	padding: 0
+	margin: 0
+
+%transition
+	@include transition(all .4s linear)
+%circle
+	@include border-top-radius(50%)
+	@include border-bottom-radius(50%)
+%blockCenter
+	margin-left: auto
+	margin-right: auto
+.clearfix
+	clear: both
+%overlay
+	+position(absolute, 0 0 0 0)
+	+size(100%)
+	background: rgba($black, .5)
+	display: block
+%inline-vertical
+	display: inline-block
+	vertical-align: middle
+%clearfix
+	content: '.'
+	display: block
+	clear: both
+	height: 0
+	line-height: 0
+	font-size: 0
+	visibility: hidden
+	overflow: hidden
+
+/*
+ * RESPONSIVE GRID
+ */
+// +desktop-large - TAM: 1150px
+// +desktop-medium - TAM: 993px
+// +desktop-small - TAM: 840px
+// +tablet - TAM: 768px
+// +mobile-large - TAM: 480px
+// +mobile-medium - TAM: 375px
+// +mobile-small - TAM: 325px
+
+.gridE
+	max-width: 1562px
+	@extend %blockCenter
+
+.gridD
+	max-width: 1165px
+	height: 100%
+	@extend %blockCenter
+	+desktop-medium
+		+padding(null 15px)

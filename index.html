@@ -1,219 +1,181 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="goal-hunter">
-  <head>
-    <script>
-      window.location = "http://www.goalhunter.com.br/";
-    </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5373NFK');</script>
-    <!-- End Google Tag Manager -->
-    <meta name="google-site-verification" content="YRSC5MgD4aZ8FSs3hFpZQ5oIjbuzS-NcLZjNiXaxrSE" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <title>Goal Hunter</title>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="A Goal Hunter nasceu para melhorar o modo que as empresas contratam e avaliam especialistas em vendas.">
+    <meta name="keywords" content="">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5373NFK"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->    
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css ">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116669563-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-116669563-1');
+    </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+         fbq('init', '1593856600731352'); 
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" src="https://www.facebook.com/tr?id=1593856600731352&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <title>Goal Hunter</title>
+</head>
+
+<body>
     <header>
-      <div class="gridD">
-        <div class="logo">
-          <img src="assets/img/logo.png" alt="Hr Tech">
+        <div class="gridD">
+            <div class="logo">
+                <a href="#banner" class="anchor">
+                    <img src="assets/img/logo.png" alt="Hr Tech">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="anchor">Quem Somos</a></li>
+                    <li><a href="#contact" class="anchor">Soluções</a></li>
+                    <li><a href="http://goalhunter.com.br/mvp/" class="cta">teste!</a></li>
+                </ul>
+            </nav>
+            <div class="btn-mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <!-- <nav>
-          <ul>
-            <li><a href="#">Solutions</a></li>
-            <li><a href="#">Software</a></li>
-            <li><a href="#" class="cta">Get smart!</a></li>
-          </ul>
-        </nav> -->
-      </div>
     </header>
-    <main>
-      <section id="banner">
-        <div class="gridD">
-          <div class="content">
-            <p>Você, gestor ou profissional de vendas digitais, já pensou em uma solução que pudesse te ajudar a avaliar ou ser avaliado de forma mais assertiva em um processo seletivo com base na realização e análise de testes técnicos?</p>
-            <div class="perfis">
-              <a href="#contact">Sim :)</a>
-              <a href="#contact">Não :(</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="contact">
-        <div class="gridD">
-          <div class="columns">
-            <div class="column">
-              <p>Existem diversas variáveis envolvidas em um processo comercial para que uma empresa possa potencializar seus resultados de venda. Uma variável crucial​ ​desse​ ​processo​ ​é​ ​ter​ ​as​ ​pessoas​ ​certas.</p>
+    <main id="main">
 
-              <p>Nós, da Goal Hunter, estamos preparando uma solução inovadora, que automatiza o recrutamento e seleção de empresas para que elas possam estruturar seus processos de forma simples (definir etapas, critérios, testes para candidatos).</p>
+        <section id="banner">
+            <div class="gridD">
+                <div class="content">
+                    <h1>Você conhece o novo mercado de vendas?</h1>
+                    <div class="perfis">
+                        <a href="#contact" class="anchor">Eu quero conhecer</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="intro">
+            <div class="gridD">
+                <div class="content">
+                    <div class="column">
+                        <div class="icon">
+                            <img src="assets/img/icons/icon1.png" alt="">
+                        </div>
+                        <h3>Descubra o que
+                            <br>o mercado procura</h3>
+                    </div>
+                    <div class="column">
+                        <div class="icon">
+                            <img src="assets/img/icons/icon2.png" alt="">
+                        </div>
+                        <h3>Entenda o que a empresa
+                            <br>espera do time de vendas</h3>
+                    </div>
+                    <div class="column">
+                        <div class="icon">
+                            <img src="assets/img/icons/icon3.png" alt="">
+                        </div>
+                        <h3>Saiba como ser
+                            <br>uma referência na sua área</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="gridD">
+                <h2>O que faz realmente um excelente
+                    <br>profissional de vendas?</h2>
+                <p>As equipes de vendas precisam de profissionais competentes, que possuam talentos, habilidades e aptidões variadas. No entanto, em um cenário com muitas mudanças, quais são as habilidades e traços mais importantes que os representantes devem ter para obter um sucesso consistente de vendas?</p>
+                <p><img src="assets/img/icons/icon4.png" alt=""></p>
 
-              <p><span>E, para que ela possa ser ainda mais assertiva, gostaríamos de contar com alguns minutinhos do seu tempo para responder esse questionário que nos ajudará a entender ainda mais o problema e como podemos ajudar a resolvê-lo.</span></p>
-              <img src="assets/img/icons/mao.png" alt="">
+                <p>Os processos de vendas mudaram bastante. Desde prospecção ativa até evoluções em Marketing Digital, vemos que a cada dia surgem novos conceitos e tecnologias que levam inovação.</p>
+                <p>Para vender para o cliente de hoje, é necessário estar onde ele está, produzir o que ele deseja, atraí-lo até você de forma assertiva e vender da forma que ele espera comprar!</p>
+
+                <p>Ainda dá tempo! Vamos viver essa transformação digital em vendas, que já está acontecendo.</p>
             </div>
-            <div class="column">
-              <form>
-                <div class="form-group">
-                  <input type="hidden" name="ip-server" value="" id="ip-server" />
-                  <label for="#">Para começar, em qual perfil você se enquadra?</label>
-                  <label for="perfil-b2b">
-                    <input type="radio" name="perfil" value="b2b" id="perfil-b2b" required onclick="getPerfil(this.value)">
-                    Empresa que contrata profissional de vendas
-                  </label>
-                  <label for="perfil-b2c">
-                    <input type="radio" name="perfil" value="b2c" id="perfil-b2c" required onclick="getPerfil(this.value)">
-                    Sou um profissional de vendas
-                  </label>
-                  <input type="hidden" id="perfil">
+        </section>
+        <section id="contact">
+            <div class="gridD">
+                <div class="columns">
+                    <div class="column">
+                        <img src="assets/img/icons/icon5.png" alt="">
+                    </div>
+                    <div class="column">
+                        <h2>Vamos te ajudar!</h2>
+                        <p>A Goal Hunter nasceu para melhorar o modo que as empresas contratam e avaliam especialistas em vendas. Para que isso ocorra o nosso Time está desenvolvendo uma ferramenta que será capaz de traçar um perfil de cada candidato na área comercial.</p>
+
+                        <p>Por isso pedimos que preencha o formulário abaixo. Além disso, você receberá no seu e-mail o nosso conteúdo que trará as principais escolhas feitas pelos recrutadores na hora de montar um eficiente Time de Vendas.</p>
+
+                        <p>Essa é a hora de desenvolver habilidades para se manter relevante no futuro. ;)</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                  <input type="text" name="fullname" placeholder="Nome Completo*" required>
-                </div>
-                <div class="form-group">
-                  <input type="email" name="email" placeholder="Email*" required>
-                </div>
-                <div class="form-group b2b none">
-                  <div class="form-group">
-                    <input type="text" name="company" placeholder="Empresa*">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" name="cargo" placeholder="Cargo*">
-                  </div>
-                  <div class="form-group">
-                    <input type="number" name="n-funcionarios" placeholder="Número de funcionarios*">
-                  </div>
-                  <div class="form-group">
-                    <div class="form-group">
-                      <label for="#">Na sua empresa, quem é o responsável pela contratação do profissional de vendas?*</label>
-                      <select name="responsavel" onchange="others(this);">
-                        <option value="CEO/ sócios">CEO/ sócios</option>
-                        <option value="Gerente de RH">Gerente de RH</option>
-                        <option value="Head de Vendas">Head de Vendas</option>
-                        <option value="outros">Outros</option>
-                      </select>
-                    </div>
-                    <div id="outros" class="form-group outros none">
-                      <input type="text" placeholder="Especifique" name="outros-responsaveis">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="#">Você já teve problema com análise de competências técnicas de profissionais de vendas em um processo seletivo?*</label>
-                    <label for="value-analise-a">
-                      <input type="radio" name="problema-analise" value="value-analise-a" id="value-analise-a">Sim
-                    </label>
-                    <label for="value-analise-b">
-                      <input type="radio" name="problema-analise" value="value-analise-b" id="value-analise-b">Não
-                    </label>
-                  </div>
-                  <div class="value-analise-a none">
-                    <div class="form-group">
-                      <label for="#">Conte-nos um pouco sobre essa experiência.</label>
-                      <input type="text" name="experiencia-b2b">
-                    </div>
-                    <div class="form-group">
-                      <label for="#">Como você lidou ou está lidando com isso?</label>
-                      <input type="text" name="lidar">
-                    </div>
-                    <div class="form-group">
-                      <label for="#">Qual seria a solução ideal para resolver esse problema?</label>
-                      <input type="text" name="solucao-b2b">
-                    </div>
-                  </div>
-                  <div class="value-analise-b none">
-                    <div class="form-group">
-                      <label for="#">Como você avalia as competências técnicas de profissionais de vendas em um processo seletivo?</label>
-                      <input type="text" name="avaliacao-competencias">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group b2c none">
-                  <div class="form-group">
-                    <label for="#">Qual sua especialização em vendas?</label>
-                    <select name="especializacao">
-                      <option value="Account Executive">Account Executive</option>
-                      <option value="SDR Inboound">SDR Inboound</option>
-                      <option value="SDR Outbound">SDR Outbound</option>
-                      <option value="Faço todo o processo de vendas - da prospecção ao fechamento">Faço todo o processo de vendas - da prospecção ao fechamento</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="#">Você já teve problema com análise de competências técnicas em um processo seletivo?</label>
-                    <label for="value-competencias-a">
-                      <input type="radio" name="analise-competencias" value="value-competencias-a" id="value-competencias-a">Sim
-                    </label>
-                    <label for="value-competencias-b">
-                      <input type="radio" name="analise-competencias" value="value-competencias-b" id="value-competencias-b">Não
-                    </label>
-                  </div>
-                  <div class="values">
-                    <div class="form-group">
-                      <label for="#">Conte-nos um pouco sobre essa experiência.</label>
-                      <input type="text" name="experiencia-b2c">
-                    </div>
-                    <div class="form-group value-competencias-b none">
-                      <label for="#">Qual seria a solução ideal para resolver esse problema?</label>
-                      <input type="text" name="solucao-b2c">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <input type="submit" value="ENVIAR">
-                </div>
-              </form>
             </div>
-          </div>
-        </div>
-      </section>
-      <section id="foco">
-        <div class="gridD">
-          <div class="columns">
-            <div class="column">
-              <h2>Mantenha o foco. Sempre!</h2>
-              <h3>Identifique as Melhores Oportunidades</h3>
-              <p>De acordo com pesquisas recentes divulgadas pelo IBOPE, apenas 3 em cada 10 brasileiros permanecem em seus empregos por mais de 2 anos. Com mais de 2 mil pessoas entrevistadas, o levantamento apontou que, para mais de 70% dos respondentes, essa rotatividade prejudica as empresas, o mercado e os trabalhadores.
-              <br>Parte disso se deve, sim, a erros no momento da avaliação dos candidatos, muitas vezes selecionados sem a consideração de fatores importantes e determinantes de seus perfis. Enquanto as empresas perdem por precisarem reavaliar suas equipes, os candidatos perdem por continuarem em meio a incertezas e esperas.
-              <br>Por isso é importante, desde o primeiro contato, identificar o foco que deve ser aplicado sobre as habilidades e a personalidade dos candidatos, para que os processos sejam mais justos e adequados às exigências de cada vaga aberta no mercado.</p>
+        </section>
+        <section id="formulario">
+            <div class="gridD">
+                <form id="form" class="topBefore" onsubmit="formController.add(event)">
+                    <div id="successView"></div>
+                    <!-- <h2>Assine nossa Newsletter</h2> -->
+                    <input id="name" type="text" placeholder="Nome Completo" pattern="(.*)\s(.*)" oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
+                    oninput="setCustomValidity('')" autocomplete='name' required>
+                    <input id="email" type="email" placeholder="E-mail" pattern="(.*)+@(.*)+\.(.*)" oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
+                    oninput="setCustomValidity('')" autocomplete='email' required>
+                    <input class="action-button" id="submit" type="submit" value="ENVIAR">
+                </form>
+                <div class="msg">
+                    <p>Obrigado por se cadastrar!!</p>
+                </div>
             </div>
-            <div class="column image">
-              <img src="assets/img/bg-foco.png" alt="">
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
 
     <footer>
-      <div class="gridD">
-        <img src="assets/img/logo-footer.png" alt="Hr tech">
-      </div>
+        <div class="gridD">
+            <h3>Acompanhe nossas redes sociais:</h3>
+            <div class="links">
+                <a href="https://business.facebook.com/goalhunteroficial/" target="_blank"><img src="assets/img/icons/facebook.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/company/goal-hunter/" target="_blank"><img src="assets/img/icons/linkedin.png" alt="Linkedin"></a>
+            </div>
+        </div>
     </footer>
 
-    <div id="modal">
-      <div class="mask"></div>
-      <div class="content">
-        <div class="fechar">X</div>
-        <img src="assets/img/icons/coracao.png" alt="Coração">
-        <p>Foi muito valiosa a sua colaboração, o time da Goal Hunter agradece!.</p>
-      </div>
-    </div>
+    <!-- <section id="obrigado" class="obrigado submit">
+        <img src="assets/img/icons/coracao.png" alt="">
+        <div class="obrigadoTexto">
+            <h2>Obrigado!</h2>
+            <h3>Suas informações serão muito importantes para consolidarmos um novo formato de seleção de profissionais para
+                o mercado digital, e não serão compartilhadas nem divulgadas publicamente</h3>
+        </div>
+    </section> -->
 
-    <script type="text/javascript" src="assets/js/Helpers.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
-    <script type="text/javascript" src="assets/js/scripts.js"></script>
-
-    <script src="assets/js/form.js"></script>
-    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="assets/js/app/models/Form.js"></script>
+    <script src="assets/js/app/controllers/FormController.js"></script>
+    <script src="assets/js/app/models/FormList.js"></script>
+    <script src="assets/js/app/index.js"></script>
+    <script>
+        let formController = new FormController();
+    </script>
 </body>
+
 </html>

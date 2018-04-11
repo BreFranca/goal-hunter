@@ -9,47 +9,105 @@
 
 body
 	display: block
-	font-family: $Roboto
+	font-family: $Lato
 	font-size: 14px
+	&.menu-sticky
+		header
+			+position(fixed, null)
 	a
 		text-decoration: none
-		&.cta
-			+padding(14px)
-			background: $primary-color
-			font-weight: 600
-			text-transform: uppercase
-			+border-right-radius(50px)
-			+border-left-radius(50px)
-			color: $white
 	header
-		height: 100px
-		@media(max-width: 992px)
-			height: 70px
+		height: 80px
+		background: $white
+		z-index: 10
+		+position(absolute, 0 0 null 0)
+		@extend %transition
 		.gridD
 			+display(flex)
 			+align-items(center)
-			// +justify-content(space-between)
+			+justify-content(space-between)
 		.logo
 			img
 				display: block
-				max-height: 60px
+				max-height: 50px
 				width: auto
 				@media(max-width: 992px)
 					max-height: 50px
 		nav
+			@extend %transition
+			@media(max-width: 600px)
+				+position(absolute, 100% 0 null 0)
+				background: $primary-color
+				+padding(10px null)
+				visibility: hidden
+				opacity: 0
+				&.active
+					visibility: visible
+					opacity: 1
 			ul
 				li
 					display: inline-block
 					+margin(null 15px)
+					@media(max-width: 600px)
+						display: block
+						+margin(null 0)
 					a
 						font-size: 18px
 						color: $primary-color
 						font-weight: 600
 						text-decoration: none
+						display: block
+						@extend %transition
+						&:hover
+							color: $black
+						@media(max-width: 600px)
+							color: $white
+							+padding(15px)
+							text-transform: uppercase
+						&.cta
+							+padding(14px)
+							background: $primary-color
+							font-weight: 600
+							text-transform: uppercase
+							+border-right-radius(50px)
+							+border-left-radius(50px)
+							color: $white
+							@extend %transition
+							@media(max-width: 600px)
+								+padding(15px)
+								background: $grey
+								border-radius: 0
+								color: $primary-color
+							&:hover
+								background: $black
+								color: $white
+		.btn-mobile
+			@media(min-width: 481px)
+				display: none
+			span
+				+size(40px 4px)
+				background: $grey
+				display: block
+				position: relative
+				@extend %transition
+				&:nth-child(2)
+					+margin(8px null)
+			&.active
+				span
+					&:first-child
+						+transform(rotate(45deg))
+						top: 12px
+					&:nth-child(2)
+						visibility: hidden
+						opacity: 0
+					&:last-child
+						+transform(rotate(-45deg))
+						bottom: 12px
 
 	#banner
-		height: 662px
+		height: 600px
 		background: url('../img/banner.jpg') center center no-repeat
+		margin-top: 80px
 		@media(max-width: 992px)
 			height: 500px
 		.gridD
@@ -60,16 +118,16 @@ body
 		.content
 			text-align: center
 		h1
-			font-size: 50px
+			font-size: 42px
 			color: $white
 			font-weight: 700
 			text-align: center
+			padding-bottom: 20px
 		p
-			font-size: 35px
+			font-size: 25px
 			color: $white
 			text-align: center
 			padding-bottom: 40px
-			font-family: $quickSand
 			font-weight: 700
 			@media(max-width: 992px)
 				font-size: 30px
@@ -78,17 +136,17 @@ body
 			@media(max-width: 480px)
 				font-size: 20px
 		a
-			font-size: 25px
+			font-size: 20px
 			color: $secondary-color
 			background: $white
 			display: inline-block
 			+border-left-radius(30px)
 			+border-right-radius(30px)
-			+padding(15px 20px)
+			+padding(20px 25px)
 			+margin(null 15px)
 			box-shadow: 2px 1px 5px 0pxs $secondary-color
-			font-family: $quickSand
 			font-weight: 700
+			text-transform: uppercase
 			@extend %transition
 			@media(max-width: 992px)
 				font-size: 20px
@@ -98,6 +156,7 @@ body
 				font-size: 15px
 			&:hover
 				background: $primary-color
+				color: $white
 
 	.columns
 		+display(flex)
@@ -106,117 +165,138 @@ body
 		.column
 			+size(50% auto)
 			@media(max-width: 992px)
-				width: 100%
+				width: 100
 
 	.form-group
-		display: block
+		display: inline-block
 		+padding(10px null)
 		&:first-child
 			padding-top: 0
-		label
-			display: block
-			// text-transform: uppercase
-			max-width: 470px
-			font-family: $quickSand
+	form
+		text-align: center
+		margin-top: 30px
+	input[type="text"],
+	input[type="number"],
+	input[type="email"],
+	select
+		display: inline-block
+		+appearance(none)
+		box-shadow: none
+		height: 50px
+		background: $secondary-color
+		width: calc(100% - 12px)
+		padding-left: 12px
+		+margin(null auto)
+		max-width: 300px
+		font-size: 20px
+		border: 1px solid $secondary-color
+		+border-left-radius(10px)
+		+border-right-radius(10px)
+		+placeholder
 			font-weight: 600
-			color: #636363
-			@media(max-width: 992px)
-				max-width: 100%
-		input[type="text"],
-		input[type="number"],
-		input[type="email"],
-		select
-			display: block
-			+appearance(none)
-			box-shadow: none
-			height: 40px
-			background: $white
-			width: calc(100% - 12px)
-			padding-left: 12px
-			max-width: 470px
-			font-size: 14px
-			border: none
-			box-shadow: 2px 1px 5px 0px $secondary-color
-			font-family: $quickSand
-			+placeholder
-				font-weight: 600
-			@media(max-width: 992px)
-				max-width: 100%
-		select
-			width: 100%
-		input[type="submit"]
-			cursor: pointer
-			+appearance(none)
-			border: none
-			box-shadow: 2px 1px 5px 0px $secondary-color
-			+border-left-radius(30px)
-			+border-right-radius(30px)
-			font-family: $quickSand
-			background: $white
-			color: $secondary-color
-			+padding(15px 20px)
-			font-size: 14px
-
-	#contact
+			opacity: .4
+			color: $black
+		@media(max-width: 992px)
+			max-width: 100%
+			+margin(10px null)
+	select
+		width: 100%
+	input[type="submit"]
+		cursor: pointer
+		+appearance(none)
+		border: none
+		box-shadow: none
+		+border-left-radius(10px)
+		+border-right-radius(10px)
 		background: $primary-color
-		+padding(60px null)
-		.none
-			display: none
-		.columns
-			.column
-				width: calc(50% - 30px)
-				+padding(null 15px)
-				@media(max-width: 992px)
-					width: calc(100% - 30px)
-					+margin(15px null)
-				p
-					color: $white
-					font-size: 20px
-					line-height: 1.2em
-					text-align: right
-					font-weight: 700
-					+padding(15px null)
-					@media(max-width: 992px)
-						text-align: left
-					&:first-child
-						padding-top: 0
-					strong
-						color: $secondary-color
-					span
-						color: $grey
-				img
-					display: block
-					+margin(null auto)
-					margin-top: 30px
-					@media(max-width: 992px)
-						margin-bottom: 30px
-						margin-top: 10px
-						max-width: 100px
-		.form-msg
-			margin-top: 20px
-			font-size: 16px
-			font-weight: 600
+		color: $white
+		+size(120px 52px)
+		font-size: 20px
+		+margin(null auto)
+		max-width: 120px
+		display: inline-block
+		cursor: pointer
+		@extend %transition
+		&:hover
+			background: $secondary-color
+		@media(max-width: 992px)
+			+margin(10px null)
 
-	#foco
+	#intro
+		background: $white
+		height: 280px
+		@media(max-width: 480px)
+			height: auto
+			+padding(30px null)
+		.gridD
+			height: 100%
+		.content
+			+display(flex)
+			+align-items(center)
+			height: 100%
+			@media(max-width: 480px)
+				+flex-wrap(wrap)
+				+justify-content(center)
+			.column
+				width: 33.33%
+				+display(flex)
+				+flex-direction(column)
+				+justify-content(center)
+				+align-items(center)
+				@media(max-width: 480px)
+					width: 50%
+					margin-bottom: 30px
+					&:last-child
+						margin-bottom: 0
+				@media(max-width: 320px)
+					width: 100%
+				.icon
+					margin-bottom: 20px
+				img
+					max-height: 120px
+				h3
+					color: $black
+					font-size: 20px
+					text-align: center
+
+	#about
 		position: relative
+		background: $secondary-color
+		+padding(60px null)
+		&::after
+			@extend %clearfix
 		h2
-			font-size: 33px
-			color: $secondary-color
-			font-family: $quickSand
-			font-weight: 700
-		h3
-			font-size: 26px
+			font-size: 36px
 			color: $grey
-			font-family: $quickSand
-			font-weight: 600
-			+padding(20px null 10px)
+			font-weight: 700
+			margin-bottom: 30px
+			clear: both
+			text-align: center
+			@media(max-width: 480px)
+				font-size: 30px
 		p
 			color: $grey
-			font-size: 16px
-			line-height: 22px
+			font-size: 25px
+			line-height: 1.2em
+			padding-bottom: 20px
+			font-weight: 300
+			text-align: justify
+			@media(max-width: 480px)
+				font-size: 20px
+			img
+				float: right
+				margin-left: 20px
+				max-width: 400px
+				@media(max-width: 992px)
+					max-width: 250px
+				@media(max-width: 480px)
+					float: none
+					display: block
+					max-height: 150px
+					+margin(null auto)
 		.columns
 			.column
-				height: 600px
+				height: 500px
 				+display(flex)
 				+flex-direction(column)
 				+justify-content(center)
@@ -231,10 +311,14 @@ body
 					@media(max-width: 992px)
 						width: 100%
 						padding-right: 0
+				p
+					padding-bottom: 15px
+				&:last-child
+					margin-top: 20px
 				&.image
 					+position(absolute, 0 0 null null)
 					background: url('../img/bg-foco.png') center center no-repeat
-					height: 600px
+					height: 100%
 					+padding(0)
 					img
 						opacity: 0
@@ -252,18 +336,105 @@ body
 						background: none
 						img
 							opacity: 1
+	#contact
+		+padding(60px null null)
+		.none
+			display: none
+		.columns
+			.column
+				width: auto
+				@media(max-width: 992px)
+					width: 100%
+				&:first-child
+					margin-right: 50px
+					@media(max-width: 992px)
+						+margin(null auto)
+				h2
+					font-size: 36px
+					color: $grey
+					text-align: center
+					@media(max-width: 480px)
+						font-size: 30px
+				p
+					color: $grey
+					font-size: 25px
+					line-height: 1.2em
+					text-align: justify
+					font-weight: 300
+					+padding(15px null)
+					@media(max-width: 480px)
+						font-size: 20px
+					&:first-child
+						padding-top: 0
+					strong
+						color: $secondary-color
+					span
+						color: $grey
+				img
+					display: block
+					+margin(null auto)
+					margin-top: 30px
+					max-width: 200px
+					@media(max-width: 992px)
+						max-width: 100px
+						+margin(10px auto 30px)
+		.form-msg
+			margin-top: 20px
+			font-size: 16px
+			font-weight: 600
+	#formulario
+		+padding(30px null 90px)
+		@extend %transition
+		form
+			@extend %transition
+		.msg
+			overflow: hidden
+			visibility: visible
+			opacity: 0
+			p
+				font-size: 40px
+				color: $white
+				text-align: center
+		&.obrigado
+			background: $secondary-color
+			+padding(60px null)
+			margin-top: 40px
+			form
+				visibility: hidden
+				opacity: 0
+				height: 0
+				overflow: hidden
+				margin-top: 0
+			.msg
+				opacity: 1
+				visibility: visible
+				overflow: auto
 
 	footer
-		height: 80px
-		background: $primary-color
+		background: $white
 		position: relative
 		z-index: 2
-		.gridD
-			+display(flex)
-			+align-items(center)
+		background: $primary-color
+		+padding(15px null)
+		text-align: center
+		a
+			display: inline-block
+			@extend %transition
+			&:hover
+				opacity: .8
 		img
 			max-height: 60px
 			width: auto
+			display: inline-block
+			+margin(null 10px)
+		h3
+			font-size: 32px
+			color: $grey
+			text-align: center
+			@media(max-width: 480px)
+				font-size: 25px
+		.links
+			margin-top: 20px
 	
 	#modal
 		+position(fixed, 0)
@@ -292,7 +463,6 @@ body
 			+align-items(center)
 			+flex-direction(column)
 			text-align: center
-			font-family: $quickSand
 			font-weight: 600
 			font-size: 18px
 			@media(max-width: 480px)
@@ -303,7 +473,9 @@ body
 					max-height: 60px
 			.fechar
 				+position(absolute, 5px 7px null null)
-				font-family: $quickSand
 				font-weight: bold
 				cursor: pointer
-		
+	
+	.obrigado
+		section
+			display: none
