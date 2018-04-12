@@ -4,7 +4,7 @@ class Export  {
     this.formats = {
       header : [
         'email,nome,data_hora',
-        'email,name'
+        'email,nome'
       ],
       body : ['', ''],
       name : [
