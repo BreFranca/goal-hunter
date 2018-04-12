@@ -14,7 +14,6 @@ class TableView extends Views {
               <th>E-mail</th>
             </tr>
           </thead>
-
           <tbody>
             ${Object.entries(model).map(data => `
               <tr>

@@ -107,12 +107,12 @@ body #about::after {
 
 .gridD {
   max-width: 1420px;
-  height: 100%; }
-  @media (max-width: 1150px) {
-    .gridD {
-      padding-right: 15px;
-      padding-left: 15px; } }
-
+  height: 100%;
+  padding-right: 30px;
+  padding-left: 30px; }
+@media(max-width: 1450px) {
+  .gridD {
+    max-width: 1025px; } }
 body {
   display: block;
   font-family: "Lato", sans-serif;
@@ -570,7 +570,7 @@ body {
     font-size: 30px; } }
     body #about p {
       color: #636362;
-      font-size: 25px;
+      font-size: 16px;
       line-height: 1.2em;
       padding-bottom: 20px;
       font-weight: 300;
@@ -691,7 +691,7 @@ body {
     font-size: 30px; } }
       body #contact .columns .column p {
         color: #636362;
-        font-size: 25px;
+        font-size: 16px;
         line-height: 1.2em;
         text-align: justify;
         font-weight: 300;

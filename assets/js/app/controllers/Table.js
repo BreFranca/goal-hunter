@@ -51,7 +51,7 @@ class TableCtrl {
 
     });
 
-    this._db = new Database('https://gamaassignment2.firebaseio.com/', 'leads', {
+    this._db = new Database('https://xp-assignment-3.firebaseio.com/', 'leads', {
       onAppend: data => {
         this.append(data.key, data.val());
         this.page = 1;
@@ -138,7 +138,7 @@ class TableCtrl {
     this._view.update(this.paginated);
     this._setupLink(0, this._links[0]);
     this._setupLink(1, this._links[1]);
-    this._setupLink(2, this._links[2]);
+    // this._setupLink(2, this._links[2]);
     this._setTotalRows();
   }
 
