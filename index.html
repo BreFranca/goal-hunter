@@ -8,10 +8,10 @@
     <meta property="og:site_name" content="Goal Hunter">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:description" content="A Goal Hunter nasceu para melhorar o modo que as empresas contratam e avaliam especialistas em vendas.">
-    <meta property="og:image" content="http://www.goalhunter.com.br/image-facebook.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="800"> <!-- PIXELS -->
-    <meta property="og:image:height" content="600"> <!-- PIXELS -->
+    <meta property="og:image" content="http://www.goalhunter.com.br/imagem-facebook.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="527"> <!-- PIXELS -->
+    <meta property="og:image:height" content="275"> <!-- PIXELS -->
     <meta property="og:type" content="website">
     <!-- END - FACEBOOK META -->
     <meta charset="UTF-8">
@@ -49,6 +49,17 @@
         <img height="1" width="1" src="https://www.facebook.com/tr?id=1593856600731352&ev=PageView&noscript=1"/>
     </noscript>
     <!-- End Facebook Pixel Code -->
+    <!-- Hotjar Tracking Code for http://goalhunter.com.br/ -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:833068,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
     <title>Goal Hunter</title>
 </head>
 
@@ -63,8 +74,8 @@
             <nav>
                 <ul>
                     <li><a href="#about" class="anchor">Quem Somos</a></li>
-                    <li><a href="#contact" class="anchor">Soluções</a></li>
-                    <!-- <li><a href="http://goalhunter.com.br/mvp/" class="cta">teste!</a></li> -->
+                    <li><a href="#depoiments" class="anchor">Depoimentos</a></li>
+                    <li><a href="http://goalhunter.com.br/mvp/" class="cta">Faça o teste agora!</a></li>
                 </ul>
             </nav>
             <div class="btn-mobile">
@@ -77,10 +88,21 @@
     <main id="main">
         <section id="banner">
             <div class="gridD">
-                <div class="content">
-                    <h1>Você conhece suas habilidades em vendas?</h1>
-                    <div class="perfis">
-                        <a href="#contact" class="anchor">Eu quero conhecer</a>
+                <div class="columns">
+                    <div class="column">
+                        <h1>Este é o motivo pelo qual suas vendas estão baixas</h1>
+                        <p>Descubra as competências que você precisa na nossa <strong>calculadora de habilidades</strong> e saiba como se destacar no mercado de vendas.</p>
+                    </div>
+                    <div class="column">
+                        <h2>Teste Grátis
+                            <br><span>suas habilidades</span></h2>
+                        <form onsubmit="formController.add(event)">
+                            <input id="name" type="text" placeholder="Nome Completo" pattern="(.*)\s(.*)" oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
+                            oninput="setCustomValidity('')" autocomplete='name' required>
+                            <input id="email" type="email" placeholder="E-mail" pattern="(.*)+@(.*)+\.(.*)" oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
+                            oninput="setCustomValidity('')" autocomplete='email' required>
+                            <input class="action-button" id="submit" type="submit" value="Quero vender mais">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -114,62 +136,67 @@
         </section>
         <section id="about">
             <div class="gridD">
-                <h2>O que faz realmente um excelente
-                    <br>profissional de vendas?</h2>
-                <p>As equipes de vendas precisam de profissionais competentes, que possuam talentos, habilidades e aptidões variadas. No entanto, em um cenário com muitas mudanças, quais são as habilidades e traços mais importantes que os representantes devem ter para obter um sucesso consistente de vendas?</p>
-                <p><img src="assets/img/icons/icon4.png" alt=""></p>
-
-                <p>Os processos de vendas mudaram bastante. Desde prospecção ativa até evoluções em Marketing Digital, vemos que a cada dia surgem novos conceitos e tecnologias que levam inovação.</p>
-                <p>Para vender para o cliente de hoje, é necessário estar onde ele está, produzir o que ele deseja, atraí-lo até você de forma assertiva e vender da forma que ele espera comprar!</p>
-
-                <p>Ainda dá tempo! Vamos viver essa transformação digital em vendas, que já está acontecendo.</p>
-            </div>
-        </section>
-        <section id="contact">
-            <div class="gridD">
                 <div class="columns">
-                    <div class="column">
+                    <div class="column ">
                         <img src="assets/img/icons/icon5.png" alt="">
                     </div>
                     <div class="column">
                         <h2>Vamos te ajudar!</h2>
-                        <p>A Goal Hunter nasceu para melhorar o modo que as empresas contratam e avaliam especialistas em vendas. Para que isso ocorra o nosso Time está desenvolvendo uma ferramenta que será capaz de traçar um perfil de cada candidato na área comercial.</p>
-
-                        <p>Por isso pedimos que preencha o formulário abaixo. Além disso, você receberá no seu e-mail o nosso conteúdo que trará as principais escolhas feitas pelos recrutadores na hora de montar um eficiente Time de Vendas.</p>
-
-                        <p>Essa é a hora de desenvolver habilidades para se manter relevante no futuro. ;)</p>
+                        <p>A Goal Hunter nasceu para melhorar o modo que as empresas controlam e avaliam especialistas em vendas.</p>
+                        <p>Para que isso ocorra o nosso time está desenvolvendo uma ferramente que será capaz de traçar um perfil para cada candidato na área comercial.</p>
+                        <p>Essa é a hora de desenvolver habilidades para se manter relevante no futuro. :)</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="formulario">
+        <section id="depoiments">
             <div class="gridD">
-                <form id="form" class="topBefore" onsubmit="formController.add(event)">
-                    <div id="successView"></div>
-                    <!-- <h2>Assine nossa Newsletter</h2> -->
-                    <input id="name" type="text" placeholder="Nome Completo" pattern="(.*)\s(.*)" oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
-                    oninput="setCustomValidity('')" autocomplete='name' required>
-                    <input id="email" type="email" placeholder="E-mail" pattern="(.*)+@(.*)+\.(.*)" oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
-                    oninput="setCustomValidity('')" autocomplete='email' required>
-                    <input class="action-button" id="submit" type="submit" value="ENVIAR">
-                </form>
-                <div class="msg">
-                    <p>Obrigado por se cadastrar!!</p>
+                <h2>
+                    <img src="http://via.placeholder.com/50x75" alt="" class="img-responsive">
+                    Siga 6 melhores profissionais
+                    <br>da área e aprenda muito mais.</h2>
+                <div class="columns">
+                    <div class="column">
+                        <img src="http://via.placeholder.com/145x165" alt="" class="img-responsive">
+                        <div class="desc">
+                            <h3>Nome Completo</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo amet officiis ut cupiditate rerum nulla non inventore ipsum, corporis nobis, quibusdam, molestiae autem ducimus enim blanditiis perspiciatis illo. Sint, ut.</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <img src="http://via.placeholder.com/145x165" alt="" class="img-responsive">
+                        <div class="desc">
+                            <h3>Nome Completo</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo amet officiis ut cupiditate rerum nulla non inventore ipsum, corporis nobis, quibusdam, molestiae autem ducimus enim blanditiis perspiciatis illo. Sint, ut.</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <img src="http://via.placeholder.com/145x165" alt="" class="img-responsive">
+                        <div class="desc">
+                            <h3>Nome Completo</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo amet officiis ut cupiditate rerum nulla non inventore ipsum, corporis nobis, quibusdam, molestiae autem ducimus enim blanditiis perspiciatis illo. Sint, ut.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
       <!-- END -FOCO -->
     </main>
     <!-- END - MAIN -->
     <!-- START - FOOTER -->
     <footer>
         <div class="gridD">
-            <h3>Acompanhe nossas redes sociais:</h3>
-            <div class="links">
-                <a href="https://business.facebook.com/goalhunteroficial/" target="_blank"><img src="assets/img/icons/facebook.png" alt="Facebook"></a>
-                <a href="https://www.linkedin.com/company/goal-hunter/" target="_blank"><img src="assets/img/icons/linkedin.png" alt="Linkedin"></a>
+            <div class="columns">
+                <div class="column">
+                    <h3>Acompanhe nossas
+                        <br>redes sociais:</h3>
+                </div>
+                <div class="column">
+                    <div class="links">
+                        <a href="https://business.facebook.com/goalhunteroficial/" target="_blank"><img src="assets/img/icons/facebook.png" alt="Facebook"></a>
+                        <a href="https://www.linkedin.com/company/goal-hunter/" target="_blank"><img src="assets/img/icons/linkedin.png" alt="Linkedin"></a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
