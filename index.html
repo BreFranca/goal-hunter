@@ -75,7 +75,7 @@
                 <ul>
                     <li><a href="#about" class="anchor">Quem Somos</a></li>
                     <li><a href="#depoiments" class="anchor">Depoimentos</a></li>
-                    <li><a href="http://goalhunter.com.br/mvp/" class="cta">Faça o teste agora!</a></li>
+                    <li><a href="http://goalhunter.com.br/app/" class="cta">Faça o teste agora!</a></li>
                 </ul>
             </nav>
             <div class="btn-mobile">
@@ -93,16 +93,21 @@
                         <h1>Este é o motivo pelo qual suas vendas estão baixas</h1>
                         <p>Descubra as competências que você precisa na nossa <strong>calculadora de habilidades</strong> e saiba como se destacar no mercado de vendas.</p>
                     </div>
-                    <div class="column">
-                        <h2>Teste Grátis
-                            <br><span>suas habilidades</span></h2>
+                    <div id="form" class="column">
                         <form onsubmit="formController.add(event)">
+                            <h2>Teste Grátis
+                                <br><span>suas habilidades</span></h2>
                             <input id="name" type="text" placeholder="Nome Completo" pattern="(.*)\s(.*)" oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
                             oninput="setCustomValidity('')" autocomplete='name' required>
                             <input id="email" type="email" placeholder="E-mail" pattern="(.*)+@(.*)+\.(.*)" oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
                             oninput="setCustomValidity('')" autocomplete='email' required>
                             <input class="action-button" id="submit" type="submit" value="Quero vender mais">
                         </form>
+                        <div class="msg">
+                            <h3>Obrigado por se cadastrar
+                                <br>Agora faça nosso teste</h3>
+                            <a href="http://www.goalhunter.com.br/app/">Acessar</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -142,9 +147,11 @@
                     </div>
                     <div class="column">
                         <h2>Vamos te ajudar!</h2>
-                        <p>A Goal Hunter nasceu para melhorar o modo que as empresas controlam e avaliam especialistas em vendas.</p>
-                        <p>Para que isso ocorra o nosso time está desenvolvendo uma ferramente que será capaz de traçar um perfil para cada candidato na área comercial.</p>
-                        <p>Essa é a hora de desenvolver habilidades para se manter relevante no futuro. :)</p>
+                        <p>A Goal Hunter nasceu para melhorar o modo que as empresas contratam e avaliam especialistas em vendas.</p>
+
+                        <p>Para que isso ocorra o nosso time está desenvolvendo uma ferramenta que será capaz de traçar um perfil de cada candidato na área comercial.</p>
+
+                        <p>Essa é a hora de desenvolver habilidades para se manter relevante no futuro. ;)</p>
                     </div>
                 </div>
             </div>
@@ -152,29 +159,50 @@
         <section id="depoiments">
             <div class="gridD">
                 <h2>
-                    <img src="http://via.placeholder.com/50x75" alt="" class="img-responsive">
+                    <!-- <img src="http://via.placeholder.com/50x75" alt="" class="img-responsive"> -->
                     Siga 6 melhores profissionais
                     <br>da área e aprenda muito mais.</h2>
                 <div class="columns">
                     <div class="column">
-                        <img src="http://via.placeholder.com/145x165" alt="" class="img-responsive">
+                        <img src="assets/img/depoimentos/diego.png" alt="" class="img-responsive">
                         <div class="desc">
-                            <h3>Nome Completo</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo amet officiis ut cupiditate rerum nulla non inventore ipsum, corporis nobis, quibusdam, molestiae autem ducimus enim blanditiis perspiciatis illo. Sint, ut.</p>
+                            <h3>Diego Gomes</h3>
+                            <p>O Co-Founder da Rock Content é especialista em vendas e marketing digital e compartilha seus conhecimentos no blog Webholic e SaaSholic onde posta muitos conteúdos interessantes sobre o mercado de startups.</p>
                         </div>
                     </div>
                     <div class="column">
-                        <img src="http://via.placeholder.com/145x165" alt="" class="img-responsive">
+                        <img src="assets/img/depoimentos/carla.png" alt="" class="img-responsive">
                         <div class="desc">
-                            <h3>Nome Completo</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo amet officiis ut cupiditate rerum nulla non inventore ipsum, corporis nobis, quibusdam, molestiae autem ducimus enim blanditiis perspiciatis illo. Sint, ut.</p>
+                            <h3>Carla Queiroz</h3>
+                            <p>Carla é a executiva da área de geração e gerenciamento de leads da IBM Brasil. Com mais de 20 anos de experiência na área de tecnologia, desde 2011 atua diretamente com vendas. Ela foi responsável pela expansão geográfica da IBM no Brasil.</p>
                         </div>
                     </div>
                     <div class="column">
-                        <img src="http://via.placeholder.com/145x165" alt="" class="img-responsive">
+                        <img src="assets/img/depoimentos/thiago.png" alt="" class="img-responsive">
                         <div class="desc">
-                            <h3>Nome Completo</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo amet officiis ut cupiditate rerum nulla non inventore ipsum, corporis nobis, quibusdam, molestiae autem ducimus enim blanditiis perspiciatis illo. Sint, ut.</p>
+                            <h3>Thiago Reis</h3>
+                            <p>Diretor de Vendas e Marketing da We Do Logos e também tem um projeto chamado Máquina de Crescimento. Tem mais de 10 anos de experiência na área e compartilha muitos conteúdos relevantes em seu Linkedin.</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <img src="assets/img/depoimentos/ricardo.png" alt="" class="img-responsive">
+                        <div class="desc">
+                            <h3>Ricardo Corrêa</h3>
+                            <p>CEO da Ramper e Founder da Siteina. Possui mais de 10 anos de atuação no mercado de tecnologia e 5 atuando como empreendedor. É especialista em prospecção outbound e vendas B2B.</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <img src="assets/img/depoimentos/daniel.png" alt="" class="img-responsive">
+                        <div class="desc">
+                            <h3>Daniel Baunds</h3>
+                            <p>CEO do Vendas B2B Academy, co-fundador do Vendas B2B Summit e consultor em vendas B2B na b4b. Também atua como mentor de startups no InovAtiva Brasil. Seu LinkedIn é recheado com diversos conteúdos de qualidade sobre vendas.</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <img src="assets/img/depoimentos/cristiano.png" alt="" class="img-responsive">
+                        <div class="desc">
+                            <h3>Cristiano Wuerius</h3>
+                            <p>Fundador da Inbound Sales Brasil. Atua na área de Growth da Warren Brasil, possui mais de 10 anos de experiência com vendas e já ajudou diversas empresas a estruturarem e escalarem seus setores de vendas.</p>
                         </div>
                     </div>
                 </div>
@@ -195,6 +223,7 @@
                     <div class="links">
                         <a href="https://business.facebook.com/goalhunteroficial/" target="_blank"><img src="assets/img/icons/facebook.png" alt="Facebook"></a>
                         <a href="https://www.linkedin.com/company/goal-hunter/" target="_blank"><img src="assets/img/icons/linkedin.png" alt="Linkedin"></a>
+                        <a href="#" target="_blank"><img src="assets/img/icons/instagram.png" alt="Linkedin"></a>
                     </div>
                 </div>
             </div>

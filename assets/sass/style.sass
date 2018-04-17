@@ -35,7 +35,7 @@ body
 					max-height: 50px
 		nav
 			@extend %transition
-			@media(max-width: 600px)
+			@media(max-width: 768px)
 				+position(absolute, 100% 0 null 0)
 				background: $primary-color
 				+padding(10px null)
@@ -48,7 +48,7 @@ body
 				li
 					display: inline-block
 					+margin(null 15px)
-					@media(max-width: 600px)
+					@media(max-width: 768px)
 						display: block
 						+margin(null 0)
 					a
@@ -60,7 +60,7 @@ body
 						@extend %transition
 						&:hover
 							color: $black
-						@media(max-width: 600px)
+						@media(max-width: 768px)
 							color: $white
 							+padding(15px)
 							text-transform: uppercase
@@ -73,7 +73,7 @@ body
 							+border-left-radius(50px)
 							color: $white
 							@extend %transition
-							@media(max-width: 600px)
+							@media(max-width: 768px)
 								+padding(15px)
 								background: $grey
 								border-radius: 0
@@ -82,7 +82,7 @@ body
 								background: $black
 								color: $white
 		.btn-mobile
-			@media(min-width: 481px)
+			@media(min-width: 769px)
 				display: none
 			span
 				+size(40px 4px)
@@ -160,6 +160,9 @@ body
 
 	#banner
 		height: 500px
+		@media(max-width: 769px)
+			height: auto
+			+padding(40px null null)
 		.columns
 			height: 100%
 		.column
@@ -174,10 +177,19 @@ body
 				width: 40%
 				+padding(null 30px)
 				background: #044656
+			@media(max-width: 769px)
+				width: 100%
+				&:first-child
+					padding-right: 0
+				&:last-child
+					width: 100%
+					+padding(30px null)
 		h1
 			text-align: left
 			text-shadow: 0 0 10px $black
 			font-size: 45px
+			@media(max-width: 769px)
+				text-align: center
 		h2
 			font-size: 55px
 			line-height: 45px
@@ -185,11 +197,31 @@ body
 			text-transform: uppercase
 			text-align: center
 			font-weight: 900
+			margin-bottom: 30px
 			span
 				font-size: 38px
+			@media(max-width: 1024px)
+				font-size: 53px
+			@media(max-width: 769px)
+				text-align: center
+		h3
+			color: $white
+			font-size: 40px
+			text-align: center
+			margin-bottom: 20px
+			@media(max-width: 1400px)
+				font-size: 30px
+			@media(max-width: 769px)
+				text-align: center
+		a
+			+margin(null auto)
 		p
 			font-size: 18px
 			text-align: left
+			@media(max-width: 769px)
+				text-align: center
+		form
+			margin-top: 0
 		input
 			background: $white
 			margin-bottom: 10px
@@ -204,6 +236,14 @@ body
 				color: $black
 				font-weight: 700
 				max-width: 312px
+		.msg
+			display: none
+			text-align: center
+		.obrigado
+			.msg
+				display: block
+			form
+				display: none
 
 	.columns
 		+display(flex)
@@ -212,7 +252,7 @@ body
 		.column
 			+size(50% auto)
 			@media(max-width: 992px)
-				width: 100
+				width: 100%
 
 	.form-group
 		display: inline-block
@@ -352,13 +392,21 @@ body
 				@media(max-width: 992px)
 					height: auto
 					+padding(60px null)
+					width: 100%
+				@media(max-width: 769px)
+					+padding(15px null)
 				&:first-child
 					max-width: 20%
 					margin-right: 50px
+					@media(max-width: 769px)
+						max-width: 100%
+						margin-right: 0
 				img
 					max-width: 100%
 					height: auto
 					display: block
+					@media(max-width: 769px)
+						max-width: 150px
 				h2
 					font-size: 45px
 				p
@@ -379,17 +427,30 @@ body
 			+flex-wrap(wrap)
 			.column
 				+display(flex)
+				+align-items(center)
 				width: calc(50% - 30px)
 				+padding(15px)
+				@media(max-width: 769px)
+					width: 100%
+					+padding(null 0)
+				@media(max-width: 480px)
+					+flex-direction(column)
 				img
 					margin-right: 20px
 				h3
 					font-size: 25px
 					color: $blue
+					@media(max-width: 480px)
+						text-align: center
 				p
 					font-size: 16px
 					color: $grey
 					text-align: justify
+				.desc
+					@media(max-width: 769px)
+						+display(flex)
+						+flex-direction(column)
+						+justify-content(center)
 	#contact
 		+padding(60px null null)
 		.none
@@ -476,6 +537,9 @@ body
 			+margin(null auto)
 			+justify-content(center)
 			+align-items(center)
+			@media(max-width: 480px)
+				width: 100%
+				+flex-direction(column)
 		a
 			display: inline-block
 			@extend %transition
@@ -493,8 +557,12 @@ body
 			text-align: right
 			@media(max-width: 480px)
 				font-size: 25px
+				text-align: center
+				margin-bottom: 10px
 		.links
 			text-align: left
+			@media(max-width: 480px)
+				text-align: center
 	
 	#modal
 		+position(fixed, 0)

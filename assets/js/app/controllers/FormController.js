@@ -10,7 +10,7 @@ class FormController {
         this._formList = new FormList();
         //CHANGE MAKER
         this._obrigado = $('#obrigado')
-        this._form = $('#formulario')
+        this._form = $('#form')
         this._hero = $('#main');
         this._tipo = '';
 
