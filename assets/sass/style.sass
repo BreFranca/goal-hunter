@@ -35,22 +35,24 @@ body
 					max-height: 50px
 		nav
 			@extend %transition
-			@media(max-width: 768px)
-				+position(absolute, 100% 0 null 0)
-				background: $primary-color
-				+padding(10px null)
-				visibility: hidden
-				opacity: 0
-				&.active
-					visibility: visible
-					opacity: 1
+			+position(absolute, 100% 0 null 0)
+			background: $primary-color
+			+padding(10px null)
+			visibility: hidden
+			opacity: 0
+			&.active
+				visibility: visible
+				opacity: 1
+			.gridD
+				border-right: 1px solid $black
+				border-left: 1px solid $black
 			ul
 				li
-					display: inline-block
-					+margin(null 15px)
-					@media(max-width: 768px)
-						display: block
-						+margin(null 0)
+					// display: inline-block
+					// +margin(null 15px)
+					// @media(max-width: 768px)
+					display: block
+					+margin(null 0)
 					a
 						font-size: 18px
 						color: $primary-color
@@ -60,10 +62,10 @@ body
 						@extend %transition
 						&:hover
 							color: $black
-						@media(max-width: 768px)
-							color: $white
-							+padding(15px)
-							text-transform: uppercase
+						// @media(max-width: 768px)
+						color: $white
+						+padding(15px)
+						text-transform: uppercase
 						&.cta
 							+padding(14px)
 							background: $primary-color
@@ -73,17 +75,15 @@ body
 							+border-left-radius(50px)
 							color: $white
 							@extend %transition
-							@media(max-width: 768px)
-								+padding(15px)
-								background: $grey
-								border-radius: 0
-								color: $primary-color
+							// @media(max-width: 768px)
+							+padding(15px)
+							background: $grey
+							border-radius: 0
+							color: $primary-color
 							&:hover
 								background: $black
 								color: $white
 		.btn-mobile
-			@media(min-width: 769px)
-				display: none
 			span
 				+size(40px 4px)
 				background: $grey
